@@ -1,0 +1,934 @@
+/* ===========================================================
+   GLOBAL RESET
+=========================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background: #ffffff;
+    color: #1ba7e78a;    
+    overflow-x: hidden;
+}
+
+/* ===========================================================
+   QUALCOMM-STYLE NAVBAR (UPDATED)
+=========================================================== */
+header {
+    width: 100%;
+    background: #ffffff;
+    height: 74px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #e6e8ec;
+}
+
+.q-nav {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LEFT SIDE */
+.q-left {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+}
+.q-logo img {
+    height: 42px;
+    cursor: pointer;
+}
+
+/* LINKS */
+.q-links {
+    display: flex;
+    list-style: none;
+    gap: 34px;
+}
+.q-links li {
+    position: relative;
+    cursor: pointer;
+    padding: 8px 0;
+}
+.q-links a {
+    text-decoration: none;
+    font-size: 15.8px;
+    font-weight: 500;
+    color: #181818;
+}
+
+/* underline hover effect */
+.q-links li::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: #1c1c1c;
+    transition: .32s ease;
+}
+.q-links li:hover::after,
+.q-links .active::after {
+    width: 100%;
+}
+
+/* arrow beside links */
+.arrow {
+    border: solid #181818;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+    margin-left: 6px;
+    transform: rotate(45deg);
+    transition: .3s;
+}
+.q-links li:hover .arrow {
+    transform: rotate(225deg);
+}
+
+/* RIGHT SIDE ICONS */
+.q-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+.q-right i {
+    font-size: 21px;
+    color: #1c1c1c;
+    cursor: pointer;
+    transition: .25s;
+}
+.q-right i:hover {
+    transform: scale(1.15);
+}
+.divider {
+    width: 1px;
+    height: 20px;
+    background: #c5c5c5;
+}
+
+/* ---------------- Existing CSS (kept exactly same) ---------------- */
+.hero-container {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    background: #ffffff;
+}
+.chip-bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.chip-svg {
+    width: 128%;
+    opacity: 0.12;
+    transition: transform 0.25s ease-out;
+    animation: slowFloat 30s ease-in-out infinite;
+}
+@keyframes slowFloat {
+    0%   { transform: scale(1.06) translateY(-12px); }
+    50%  { transform: scale(1.11) translateY(15px); }
+    100% { transform: scale(1.06) translateY(-12px); }
+}
+.hero-content {
+    position: relative;
+    z-index: 20;
+    max-width: 760px;
+}
+.hero-content h1 {
+    font-size: 58px;
+    font-weight: 700;
+    color: #132b63;
+}
+.hero-content p {
+    font-size: 19px;
+    color: #444;
+    margin-top: 12px;
+}
+.btn-primary {
+    margin-top: 30px;
+    padding: 14px 36px;
+    background: linear-gradient(90deg, #0057ff, #0095ff);
+    border: none;
+    font-size: 18px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: 0.35s;
+}
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 6px 18px rgba(0, 102, 255, 0.35);
+}
+
+/* features, sections, cards, footer — already perfect, unchanged */
+
+.fade { opacity: 0; transform: translateY(30px); transition: 0.8s; }
+.fade.show { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 900px) { .q-links { display: none; } }
+@media (max-width: 750px) { .hero-content h1 { font-size: 42px; } }
+
+
+/* ===========================================================
+   FOOTER (NON-STICKY / AUTO AT BOTTOM)
+=========================================================== */
+.footer {
+    width: 100%;
+    background: #1f232b;
+    color: #ffffff;
+    text-align: center;
+    padding: 55px 20px;
+    margin-top: 80px;  /* page ऊपर से space */
+}
+
+.footer-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.footer-logo {
+    height: 55px;
+    margin-bottom: 18px;
+}
+
+.footer h2 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.footer-office {
+    margin-bottom: 12px;
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+.footer p {
+    font-size: 15px;
+    line-height: 1.65;
+    opacity: 0.85;
+}
+
+.footer-copy {
+    margin-top: 28px;
+    font-size: 14px;
+    opacity: 0.65;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 14px;
+}
+
+/* ============================
+   EMPLOYEE LOGIN PAGE
+============================ */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    background: #f5f7fa;
+}
+
+.login-box {
+    width: 380px;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #1f4e8c;
+    font-weight: 700;
+}
+
+.input-field {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.input-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.input-field input {
+    width: 100%;
+    border: 1.6px solid #ced4da;
+    padding: 11px 12px;
+    border-radius: 10px;
+    outline: none;
+    transition: .2s;
+}
+
+.input-field input:focus {
+    border-color: #1f4e8c;
+}
+
+.btn-login {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #1f4e8c;
+    color: white;
+    transition: .3s;
+}
+
+.btn-login:hover {
+    background: #2b6bb3;
+}
+
+.login-note {
+    font-size: 13px;
+    color: #666;
+    margin-top: 12px;
+}
+
+/* NAVBAR FULL BACKGROUND */
+.q-nav {
+    width: 100%;
+    background: #1f2942; /* dark blue */
+    padding: 14px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+}
+
+/* LOGO */
+.q-logo img {
+    height: 48px;
+}
+
+/* LEFT LINKS */
+.q-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.q-links li a {
+    color: #ffffff !important;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* RIGHT ICONS */
+.q-right {
+    display: flex;
+    align-items: center;
+}
+
+.q-right i,
+.emp-login-icon i {
+    font-size: 22px;
+    cursor: pointer;
+    color: #fff;
+    margin: 0 12px;
+    transition: 0.3s;
+}
+
+/* Employee link remove underline */
+.emp-login-icon {
+    text-decoration: none;
+}
+
+/* Hover effect */
+.q-right i:hover,
+.emp-login-icon i:hover {
+    color: #64b5ff;
+}
+
+/* Divider line */
+.divider {
+    width: 1px;
+    height: 22px;
+    background: rgba(255, 255, 255, 0.4);
+    margin: 0 8px;
+}
+
+/* ========= CAREERS PAGE ========= */
+
+.careers-hero {
+    position: relative;
+    height: 75vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.careers-hero * {
+    position: relative;
+    z-index: 2;
+}
+
+.careers-hero h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.careers-hero p {
+    font-size: 20px;
+    max-width: 800px;
+    color: #f3f3f3;
+}
+
+/* Background blur */
+.careers-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../static/your-image.jpg"); /* jo image use ho rahi hai wahi rehne do */
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    transform: scale(1.08);
+}
+
+/* ========= JOB LIST SECTION ========= */
+
+.careers-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+    background: #ffffff;
+}
+
+.careers-section h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #002d72;
+}
+
+.careers-section p.subtitle {
+    font-size: 18px;
+    margin-bottom: 45px;
+    max-width: 650px;
+    color: #555;
+}
+
+/* ========= JOB CARDS ========= */
+.job-list {
+    width: 100%;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.job-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    transition: 0.3s;
+}
+
+.job-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+}
+
+.job-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #002d72;
+}
+
+.job-meta {
+    font-size: 16px;
+    margin-bottom: 14px;
+    color: #444;
+}
+
+.job-card button {
+    padding: 9px 20px;
+    font-size: 15px;
+    background: #002d72;
+    color: white;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.job-card button:hover {
+    background: #0039aa;
+}
+
+/* ========= RESPONSIVE ========= */
+@media(max-width: 768px) {
+    .careers-hero h1 { font-size: 42px; }
+    .careers-hero p { font-size: 18px; }
+    .careers-section h2 { font-size: 34px; }
+    .job-card { padding: 18px; }
+}
+/* PRODUCTS PAGE */
+.small-hero {
+    padding: 90px 0 60px;
+}
+
+.products-wrapper {
+    background: #ffffff;
+    padding: 60px 0;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 35px;
+}
+
+.product-card {
+    background: #f8fbff;
+    border: 1px solid #dce8ff;
+    padding: 32px;
+    border-radius: 14px;
+    transition: all 0.32s ease;
+    backdrop-filter: blur(3px);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.product-title {
+    font-size: 26px;
+    margin-bottom: 18px;
+    color: #12284a;
+    font-weight: 600;
+}
+
+.product-list {
+    list-style: none;
+    margin: 0 0 20px;
+    padding: 0;
+}
+
+.product-list li {
+    padding: 6px 0;
+    position: relative;
+    padding-left: 22px;
+    font-size: 16px;
+    color: #333;
+}
+
+.product-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #007bff;
+    font-size: 15px;
+}
+
+.product-link {
+    font-size: 16px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.product-link:hover {
+    text-decoration: underline;
+}
+
+
+/* ==============================================
+   ULTRA PROFESSIONAL SEMICONDUCTOR THEME UPGRADE
+   (Aesthetic + Glow + Modern Fluid UI)
+=================================================*/
+
+/* GLOBAL */
+body {
+    background: #ffffff;
+    color: #111;
+    overflow-x: hidden;
+}
+
+/* NAVBAR REFINEMENT */
+header {
+    backdrop-filter: blur(6px);
+    background: rgba(18, 32, 62, 0.92);
+    box-shadow: 0 2px 14px rgba(0,0,0,0.14);
+}
+.q-links li::after {
+    background: #4fb8ff;
+}
+.q-links a:hover {
+    color: #7ad1ff !important;
+    transition: .28s;
+}
+.q-right i:hover {
+    color: #7dd2ff;
+}
+
+/* HERO TEXT EFFECT */
+.hero-content h1 {
+    background: linear-gradient(90deg, #0038ff, #00c8ff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.hero-content p {
+    opacity: 0;
+    animation: fadeIn 1.4s ease-out forwards;
+}
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* BUTTON GLOW */
+.btn-primary {
+    background: linear-gradient(90deg, #003cff, #00aaff);
+    box-shadow: 0 0 0px rgba(0, 136, 255, 0.0);
+}
+.btn-primary:hover {
+    box-shadow: 0 0 14px rgba(0, 136, 255, 0.55);
+}
+
+/* PRODUCT CARDS GLOW */
+.product-card:hover {
+    border: 1px solid #a3d2ff;
+    box-shadow: 0 8px 26px rgba(0, 81, 255, 0.20);
+}
+
+/* JOB CARDS */
+.job-card:hover {
+    border: 1px solid #a3d2ff;
+    box-shadow: 0 10px 26px rgba(0, 81, 255, 0.18);
+}
+
+/* SCROLL REVEAL */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: 0.9s cubic-bezier(0.28, 0.57, 0.37, 0.99);
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* CANVAS LIGHT BLEED */
+#chipBoard {
+    filter: drop-shadow(0 0 18px rgba(0, 136, 255, 0.22));
+}
+
+
+.q-nav {
+    width: 100%;
+    height: 70px;
+    background: #18233a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   /* ⭐ sabko left-right push karega */
+    padding: 0 40px;
+}
+
+.q-left {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.q-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.q-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.q-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    color: white;
+    font-size: 22px;
+}
+
+.q-right i {
+    cursor: pointer;
+}
+
+.divider {
+    width: 1.4px;
+    height: 20px;
+    background: #cfd9e5;
+    opacity: 0.5;
+}
+
+.emp-login-icon i {
+    font-size: 23px;
+}
+
+/* FOOTER */
+.footer {
+    width: 100%;
+    background: #f7f8fa;
+    padding: 60px 9%;
+    color: #1a1a1a;
+    font-family: "Poppins", sans-serif;
+}
+
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+/* Column 1 */
+.footer-about {
+    width: 28%;
+    min-width: 260px;
+}
+
+.footer-logo {
+    width: 150px;
+    margin-bottom: 18px;
+}
+
+.footer-about p {
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.footer-social {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center; 
+    gap: 20px;
+}
+
+.footer-social i {
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 50%;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.footer-social i:hover {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+/* Columns 2 & 3 */
+.footer-links, .footer-company {
+    min-width: 180px;
+}
+
+.footer-links h4, .footer-company h4, .footer-subscribe h4 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-links a,
+.footer-company a {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #1a1a1a;
+    transition: .3s;
+}
+
+.footer-links a:hover,
+.footer-company a:hover {
+    text-decoration: underline;
+}
+
+/* Column 4 */
+.footer-subscribe {
+    width: 260px;
+}
+
+.footer-subscribe p {
+    font-size: 14px;
+    margin-bottom: 14px;
+    line-height: 1.6;
+}
+
+.subscribe-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    border: 1px solid #1a1a1a;
+    background: transparent;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.subscribe-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* Bottom bar */
+.footer-bottom {
+    margin-top: 50px;
+    border-top: 1px solid #ccc;
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    flex-wrap: wrap;
+}
+
+.footer-bottom-left a {
+    margin-right: 18px;
+    color: #1a1a1a;
+    transition: .3s;
+}
+
+.footer-bottom-left a:hover {
+    text-decoration: underline;
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 13px;
+    color: #555;
+    margin-top: 18px;
+}
+
+
+/* Center Subscribe Button */
+.footer-subscribe {
+    text-align: center;
+}
+
+.subscribe-btn {
+    margin: 15px auto 0;
+    display: inline-flex;
+    justify-content: center;
+}
+
+/* Popup Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s ease;
+    z-index: 9999;
+}
+
+.modal-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-box {
+    width: 400px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    animation: zoomIn .3s ease;
+}
+
+.modal-box h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.modal-box p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.modal-box form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    margin-bottom: 14px;
+    border-radius: 6px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background: #333;
+}
+
+/* Close Button */
+.modal-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); }
+    to { transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .modal-box {
+        width: 90%;
+    }
+}

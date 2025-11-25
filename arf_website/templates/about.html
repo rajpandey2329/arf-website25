@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta-width="width=device-width, initial-scale=1.0">
+    <title>About Us - ARF</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<section class="intro">
+    <h1>Driven by Innovation. Powered by Engineering.</h1>
+    <p>Building intelligent technology that shapes the future of automation and semiconductor solutions.</p>
+</section>
+
+<section class="section">
+    <h2 class="section-title">Who We Are</h2>
+    <p class="section-text">
+        ARF is a technology company focused on delivering cutting-edge automation, analytics, and reporting
+        solutions tailored for semiconductor and high-performance engineering industries. Our platform empowers
+        organizations to accelerate product development, optimize workflows, and unlock decision-making through
+        AI-driven intelligence.
+    </p>
+</section>
+
+{% include 'footer.html' %}
+
+<script src="{{ url_for('static', filename='about.js') }}"></script>
+</body>
+</html>

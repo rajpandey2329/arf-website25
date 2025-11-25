@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products – ARF Design</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='products.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+
+    <!-- HERO -->
+    <section class="products-hero">
+        <h1>Our Products</h1>
+        <p>
+            We are Training Partners, Sales Representatives and provide local tech support for 
+            world-class EDA tools across India.
+        </p>
+        <span class="highlight">Premium EDA Product Portfolio</span>
+    </section>
+
+    <!-- PRODUCT CARDS -->
+    <section class="products-section">
+        <div class="products-grid">
+
+            <!-- Card 1 -->
+            <div class="product-card">
+                <i class="ri-cpu-line"></i>
+                <h2>Backend VLSI Software</h2>
+                <ul>
+                    <li>Slam-Edit (IC Layout Editor)</li>
+                    <li>Scheture (Schematic Editor)</li>
+                    <li>Secours (Schematic Driven Layout)</li>
+                    <li>FLVS (Layout Vs Schematic)</li>
+                    <li>FDRC (Design Rule Checker)</li>
+                    <li>XTK (Short Locator)</li>
+                </ul>
+                <a href="https://www.stabie-soft.com" target="_blank" class="learn-btn">www.stabie-soft.com</a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="product-card">
+                <i class="ri-radar-line"></i>
+                <h2>3D Electromagnetic Solver</h2>
+                <ul>
+                    <li>WIPL-D Pro</li>
+                    <li>WIPL-D Pro CAD</li>
+                    <li>Domain Decomposition Solver</li>
+                    <li>GPU Cluster Solver</li>
+                    <li>WIPL-D Microwave Pro</li>
+                    <li>WIPL-D 2D Solver</li>
+                </ul>
+                <a href="https://www.wipl-d.com" target="_blank" class="learn-btn">www.wipl-d.com</a>
+            </div>
+
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+
+    <script src="{{ url_for('static', filename='products.js') }}"></script>
+</body>
+</html>

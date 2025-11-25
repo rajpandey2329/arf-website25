@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
+/* Main container */
+.super-footer {
+    background: #262A33;
+    padding: 88px 8%;
+    font-family: "Inter", sans-serif;
+    color: #D6D8DF;
+}
+
+/* Layout */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 70px;
+}
+
+/* Left section */
+.left-section { max-width: 420px; }
+.footer-logo { height: 60px; margin-bottom: 22px; }
+.left-section p {
+    font-size: 17px;
+    line-height: 1.78;
+    margin-bottom: 32px;
+}
+
+/* Social icons */
+.social-icons { display: flex; gap: 20px; }
+.social-icons i {
+    font-size: 22px;
+    cursor: pointer;
+    transition: .25s;
+}
+.social-icons i:hover { opacity: .55; }
+
+/* Footer columns */
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 75px;
+}
+.col h4 {
+    font-size: 19px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.col a {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 12px;
+    color: #C9CDD6;
+    text-decoration: none;
+    transition: .25s;
+}
+.col a:hover {
+    color: #fff;
+    transform: translateX(4px);
+}
+
+/* Subscribe btn */
+.subscribe-btn {
+    margin-top: 14px;
+    padding: 12px 22px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background: #fff;
+    color: #1C1C1C;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: .25s;
+}
+.subscribe-btn:hover {
+    background: #E9EBFF;
+    transform: translateY(-2px);
+}
+
+/* Bottom bar */
+.footer-bottom {
+    margin-top: 65px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.bottom-links a {
+    margin-right: 22px;
+    font-size: 15px;
+    text-decoration: none;
+    color: #C2C4CB;
+}
+.bottom-links a:hover { color: #fff; }
+
+/* Language dropdown */
+.lang-select {
+    background: #2E323B;
+    border: 1px solid #3A3E46;
+    color: #D7D9DE;
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+/* Copyright */
+.copy {
+    text-align: center;
+    font-size: 14.8px;
+    color: #C5C7CC;
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+    .footer-top { text-align: center; justify-content: center; }
+    .footer-grid { justify-content: center; }
+    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+}

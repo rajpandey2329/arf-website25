@@ -1,0 +1,129 @@
+/* NAVBAR BASE */
+.q-nav {
+    width: 100%;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 55px;
+    background: linear-gradient(135deg, #1f2b3d, #1f2b3d 55%, #1f2b3d); /* richer finish */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* LEFT */
+.q-left { display: flex; align-items: center; gap: 65px; }
+.q-logo img { height: 52px; }
+
+/* LINKS */
+.q-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+}
+.q-links a {
+    color: #e7efff;
+    text-decoration: none;
+    font-size: 15.8px;
+    font-weight: 470;
+    transition: 0.28s;
+}
+.q-links a:hover {
+    color: #6cabff;
+    text-shadow: 0 0 12px rgba(108, 171, 255, 0.7);
+}
+
+/* RIGHT */
+.q-right {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    font-size: 24px;
+}
+
+/* ICON STYLING */
+.q-right i {
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: 0.28s;
+    color: #e6eeff;
+}
+.q-right i:hover {
+    background: rgba(92, 143, 255, 0.18);
+    box-shadow: 0 0 13px rgba(112, 168, 255, 0.7);
+    color: #8cbcff;
+    transform: scale(1.2);
+}
+
+/* DIVIDER */
+.divider {
+    width: 1.5px;
+    height: 28px;
+    background: #d7deea;
+    opacity: 0.32;
+}
+
+/* --------------------------- */
+/* PREMIUM WHITE DROPDOWN UI   */
+/* --------------------------- */
+.login-dropdown {
+    position: absolute;
+    top: 88px;
+    right: 65px;
+    width: 315px;
+    padding: 26px 24px;
+    background: #ffffff;
+    border-radius: 15px;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 12px 34px rgba(0,0,0,0.2);
+    display: none;
+    animation: fadeIn .23s ease-in-out;
+    color: #121212;
+}
+
+.login-dropdown h3 {
+    font-size: 17px;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+/* SIGN-IN BUTTON */
+.login-btn {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(90deg, #2551ff, #0022d6);
+    border-radius: 7px;
+    color: white;
+    font-size: 15.6px;
+    font-weight: 550;
+    transition: 0.23s;
+}
+.login-btn:hover {
+    filter: brightness(1.13);
+}
+
+/* SIGNUP LINK */
+.signup-text {
+    margin-top: 15px;
+    font-size: 13.6px;
+    color: #444;
+    text-align: center;
+}
+.signup-text a {
+    color: #1d34ff;
+    font-weight: 650;
+    text-decoration: none;
+}
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+/* FADE ANIMATION */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}

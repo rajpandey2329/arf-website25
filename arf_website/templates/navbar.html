@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}">
+</head>
+
+<body>
+<header>
+    <nav class="q-nav">
+        <div class="q-left">
+            <a href="/" class="q-logo">
+                <img src="{{ url_for('static', filename='arf_logo.png') }}" alt="">
+            </a>
+
+            <ul class="q-links">
+                <li><a href="/services">Services</a></li>
+                <li><a href="/careers">Careers</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/about">About us</a></li>
+                <li><a href="/contact">Contact us</a></li>
+            </ul>
+        </div>
+
+        <div class="q-right">
+            <i class="ri-user-line login-icon" id="loginIcon"></i>
+        </div>
+    </nav>
+</header>
+
+<!-- LOGIN DROPDOWN -->
+<div class="login-dropdown" id="loginDropdown">
+    <h3>Sign in to your account</h3>
+    <a href="/employee_login">
+        <button class="login-btn">Sign in</button>
+    </a>
+    <p class="signup-text">
+        Don't have an account? <a href="/employee_signup">Sign up →</a>
+    </p>
+</div>
+
+<script src="{{ url_for('static', filename='navbar.js') }}"></script>
+</body>
+</html>

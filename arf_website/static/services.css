@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #090d14;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* HERO */
+.service-hero {
+    text-align: center;
+    padding: 150px 20px 110px;
+    background: linear-gradient(180deg, #111827 0%, #090d14 60%);
+    animation: fadeUp 1.3s ease;
+}
+
+.service-hero h1 {
+    font-size: 64px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #3d6dff, #9cbaff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.service-hero p {
+    margin-top: 12px;
+    font-size: 20px;
+    opacity: 0.85;
+}
+
+.coming {
+    margin-top: 25px;
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 40px;
+    background: rgba(37, 99, 255, 0.2);
+    border: 1px solid #2d65ff;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #bfcfff;
+    animation: glow 1.6s infinite alternate ease;
+}
+
+/* SERVICE CARDS */
+.service-area {
+    max-width: 1230px;
+    margin: 70px auto 140px;
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    flex-wrap: wrap;
+}
+
+.s-card {
+    width: 360px;
+    padding: 50px 35px;
+    border-radius: 18px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    transition: 0.45s;
+    transform-style: preserve-3d;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.s-card.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.s-card:hover {
+    border-color: #2e6aff;
+    box-shadow: 0 0 22px #2e6aff60;
+    transform: translateY(-12px) rotateX(6deg) rotateY(-5deg);
+}
+
+.s-card i {
+    font-size: 64px;
+    margin-bottom: 18px;
+    background: linear-gradient(90deg, #4d85ff, #9fbaff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.s-card h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.s-card p {
+    font-size: 16px;
+    opacity: 0.78;
+    margin-bottom: 28px;
+}
+
+.badge {
+    padding: 9px 22px;
+    background:linear-gradient(50deg,#ff9100, #85aaff);
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+/* Animations */
+@keyframes glow {
+    0% { box-shadow: 0 0 8px #2d65ff; }
+    100% { box-shadow: 0 0 24px #2d65ff; }
+}
+
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(45px); }
+    100% { opacity: 1; transform: translateY(0); }
+}

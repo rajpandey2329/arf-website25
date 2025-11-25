@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #090d14;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* INTRO */
+.intro {
+    text-align: center;
+    padding: 170px 20px 130px;
+    background: radial-gradient(circle at 50% 10%, #2848ff33 0%, #090d14 70%);
+    animation: fadeUp 1.3s ease;
+}
+
+.intro h1 {
+    font-size: 64px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #3d6dff, #9bbdff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+}
+
+.intro p {
+    margin-top: 14px;
+    font-size: 22px;
+    opacity: 0.85;
+}
+
+/* SECTION */
+.section {
+    max-width: 1150px;
+    margin: 110px auto 160px;
+    text-align: center;
+    padding: 0 25px;
+    opacity: 0;
+    transform: translateY(45px);
+    transition: 0.7s ease;
+}
+
+.section.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title {
+    font-size: 44px;
+    font-weight: 800;
+    margin-bottom: 26px;
+    background: linear-gradient(90deg, #4f79ff, #c0d2ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-text {
+    font-size: 20px;
+    opacity: 0.82;
+    line-height: 1.8;
+}
+
+/* Animation */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+    .intro h1 {
+        font-size: 46px;
+    }
+}

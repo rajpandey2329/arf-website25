@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - ARF</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='services.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+{% include 'navbar.html' %}
+
+<!-- HERO -->
+<section class="service-hero">
+    <h1>Our Services</h1>
+    <p>We are building the Next-Gen Automation Platform</p>
+    <span class="coming">COMING SOON</span>
+</section>
+
+<!-- CARDS -->
+<div class="service-area">
+    <div class="s-card">
+        <i class="ri-cpu-line"></i>
+        <h3>Automation Engine</h3>
+        <p>Accelerating complete workflows & processes.</p>
+        <span class="badge">Launching Soon</span>
+    </div>
+
+    <div class="s-card">
+        <i class="ri-bar-chart-box-line"></i>
+        <h3>Dashboard Builder</h3>
+        <p>Real-time view of results & performance.</p>
+        <span class="badge">Launching Soon</span>
+    </div>
+
+    <div class="s-card">
+        <i class="ri-brain-line"></i>
+        <h3>AI Reporting</h3>
+        <p>Deep insights powered by intelligent analytics.</p>
+        <span class="badge">Launching Soon</span>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='services.js') }}"></script>
+
+{% include 'footer.html' %}
+
+</body>
+</html>

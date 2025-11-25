@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact – ARF Design</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='subscription.css') }}">
+</head>
+<body>
+
+{% include 'navbar.html' %}
+
+<section class="contact-container">
+    <h2>Contact Details</h2>
+
+    <form method="POST" action="/contact" class="form-box">
+
+        <div class="row">
+            <div class="col">
+                <label>First Name <span>*</span></label>
+                <div class="input-wrap">
+                    <input type="text" name="first_name" placeholder="Enter your first name" required>
+                    <i class="ri-user-3-line"></i>
+                </div>
+            </div>
+
+            <div class="col">
+                <label>Email Address <span>*</span></label>
+                <div class="input-wrap">
+                    <input type="email" name="email" placeholder="Enter your email address" required>
+                    <i class="ri-mail-line"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label>Last Name <span>*</span></label>
+                <div class="input-wrap">
+                    <input type="text" name="last_name" placeholder="Enter your last name" required>
+                    <i class="ri-user-3-line"></i>
+                </div>
+            </div>
+
+            <div class="col">
+                <label>Preferred Language</label>
+                <div class="input-wrap">
+                    <select name="language">
+                        <option value="">Choose language</option>
+                        <option>English</option>
+                        <option>Hindi</option>
+                        <option>Japanese</option>
+                        <option>French</option>
+                    </select>
+                    <i class="ri-earth-line"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label>Location / Region <span>*</span></label>
+                <div class="input-wrap">
+                    <select name="region" required>
+                        <option value="">Choose region</option>
+                        <option>India</option>
+                        <option>USA</option>
+                        <option>UK</option>
+                        <option>Germany</option>
+                    </select>
+                    <i class="ri-map-pin-line"></i>
+                </div>
+            </div>
+        </div>
+
+        <p class="info">
+            By submitting this request, you agree to receive technical and marketing communications from ARF Design.
+        </p>
+
+        <p class="info">
+            Read our privacy notice to learn how we manage your data.
+        </p>
+
+        <div class="captcha">
+            <div class="g-recaptcha" data-sitekey="6LeU6BUsAAAAAOMxKJ-gCdT2GquBJop0Ew5T0oYm"></div>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit</button>
+    </form>
+</section>
+
+{% include 'footer.html' %}
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</body>
+</html>

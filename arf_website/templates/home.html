@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARF</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+<body>
+
+{% include 'navbar.html' %}
+
+<header class="hero">
+  <video autoplay muted loop playsinline class="hero-video">
+      <source src="{{ url_for('static', filename='background.mp4') }}" type="video/mp4">
+  </video>
+  <canvas id="circuitCanvas"></canvas>
+
+  <div class="hero-inner">
+      <h1 class="hero-title">Transforming Ideas into Silicon</h1>
+      <p class="hero-sub">Engineering semiconductor innovation across architectures, SoC & AI compute.</p>
+      <button class="hero-btn" onclick="window.location.href='/contact'">Work With Us</button>
+  </div>
+</header>
+
+{% include 'footer.html' %}
+<script src="{{ url_for('static', filename='home.js') }}"></script>
+
+</body>
+</html>

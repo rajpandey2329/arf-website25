@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Login – ARF Design</title>
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Employee Login CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='employee_login.css') }}">
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<div class="login-wrapper">
+    <div class="login-card">
+
+        <div class="login-header">
+            <i class="ri-shield-user-fill login-icon"></i>
+            <h2>Employee Login</h2>
+            <p class="sub-text">Access ARF internal dashboard securely</p>
+        </div>
+
+        <form id="loginForm">
+
+            <div class="input-field">
+                <label><i class="ri-id-card-fill"></i> Employee ID</label>
+                <input type="text" id="empID" placeholder="Enter employee ID" required>
+            </div>
+
+            <div class="input-field">
+                <label><i class="ri-lock-2-fill"></i> Password</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+            </div>
+
+            <button type="submit" class="btn-login">
+                <i class="ri-login-circle-fill"></i> Login
+            </button>
+
+            <p class="login-warning">
+                <i class="ri-error-warning-fill"></i>
+                Authorized employees only. Unauthorized access is strictly prohibited.
+            </p>
+        </form>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+
+<!-- Employee Login JS -->
+<script src="{{ url_for('static', filename='employee_login.js') }}"></script>
+
+</body>
+</html>

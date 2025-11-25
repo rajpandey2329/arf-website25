@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Careers - ARF</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='careers.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+
+<body>
+
+{% include 'navbar.html' %}
+
+<section class="careers-hero">
+    <h1>Careers at ARF</h1>
+    <p>Join our mission to build the next-gen engineering intelligence</p>
+    <button class="hiring-btn">HIRING NOW</button>
+</section>
+{% include 'footer.html' %}
+<script src="{{ url_for('static', filename='careers.js') }}"></script>
+</body>
+</html>

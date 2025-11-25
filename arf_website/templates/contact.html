@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us – ARF</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+{% include 'navbar.html' %}
+
+<section class="contact-hero">
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you. Send us your queries — we respond within 24 hours.</p>
+</section>
+
+<section class="support-boxes">
+    <div class="support-card">
+        <i class="ri-customer-service-2-fill"></i>
+        <h3>Customer Support</h3>
+        <p>support@arf.com</p>
+    </div>
+
+    <div class="support-card">
+        <i class="ri-phone-fill"></i>
+        <h3>Phone</h3>
+        <p>+91 98765 43210</p>
+    </div>
+
+    <div class="support-card">
+        <i class="ri-map-pin-2-fill"></i>
+        <h3>Office</h3>
+        <p>Bengaluru, Karnataka, India</p>
+    </div>
+</section>
+
+<section class="contact-wrapper">
+<form id="contactForm" method="POST" action="/submit_contact" class="contact-form">
+
+    <div class="double-field">
+        <div class="field">
+            <label>Name*</label>
+            <input type="text" name="name" placeholder="Enter your name" required>
+            <i class="ri-user-smile-line"></i>
+        </div>
+
+        <div class="field">
+            <label>Email address*</label>
+            <input type="email" name="email" placeholder="Enter your email address" required>
+            <i class="ri-mail-line"></i>
+        </div>
+    </div>
+
+    <div class="single-field">
+        <label>Phone number</label>
+        <input type="text" name="phone" placeholder="Enter your phone number">
+        <i class="ri-phone-line"></i>
+    </div>
+
+    <div class="single-field">
+        <label>Your message</label>
+        <textarea name="message" placeholder="Describe your concern" required></textarea>
+        <i class="ri-message-3-line"></i>
+    </div>
+
+    <div class="recaptcha-area">
+        <div class="g-recaptcha" data-sitekey="6LeU6BUsAAAAAOMxKJ-gCdT2GquBJop0Ew5T0oYm"></div>
+    </div>
+
+    <button class="submit-btn" type="submit">Submit message</button>
+</form>
+</section>
+
+<section class="map-section">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31098.80014018038!2d77.5806437!3d12.9715987"
+        loading="lazy"></iframe>
+</section>
+
+<div class="success-popup" id="successPopup">
+    <i class="ri-checkbox-circle-fill"></i>
+    Message sent successfully!
+</div>
+
+{% include 'footer.html' %}
+<script src="{{ url_for('static', filename='contact.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='footer.css') }}">
+
+<footer class="super-footer">
+
+    <div class="footer-top">
+
+        <div class="left-section">
+            <img src="{{ url_for('static', filename='arf_logo.png') }}" class="footer-logo">
+            <p>
+                ARF Design accelerates semiconductor innovation with next-gen
+                chip R&D, AI computing and connectivity solutions powering the
+                world’s most advanced industries.
+            </p>
+
+            <div class="social-icons">
+                <a href="https://in.linkedin.com/company/arf-design-pvt-ltd"><i class="ri-linkedin-fill"></i></a>
+                <a><i class="ri-twitter-x-line"></i></a>
+                <a><i class="ri-youtube-fill"></i></a>
+                <a><i class="ri-instagram-line"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-grid">
+
+            <div class="col">
+                <h4>Company</h4>
+                <a href="/services">Services</a>
+                <a href="/careers">Careers</a>
+                <a href="/about">About us</a>
+            </div>
+
+            <div class="col">
+                <h4>Products</h4>
+                <a href="products">Networking</a>
+                <a href="products">Engineering Tools</a>
+                <a href="products">Chip Solutions</a>
+            </div>
+
+            <div class="col">
+                <h4>Connect</h4>
+                <a href="#">Global Offices</a>
+                <a href="#">Customer Support</a>
+                <a href="#">Partnerships</a>
+                <a href="mailto:info@arfdesign.com">info@arfdesign.com</a>
+
+                <button onclick="location.href='/subscription'" class="subscribe-btn">
+                    <i class="ri-mail-fill"></i> Subscribe
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="bottom-links">
+            <a href="#">Terms of Use</a>
+            <a href="#">Privacy</a>
+            <a href="#">Cookie Policy</a>
+            <a href="#">Accessibility</a>
+        </div>
+
+        <select class="lang-select">
+            <option>English (US)</option>
+            <option>English (UK)</option>
+            <option>Hindi</option>
+        </select>
+    </div>
+
+    <p class="copy">© 2025 ARF Design Pvt. Ltd. All Rights Reserved.</p>
+</footer>
+
+<script src="{{ url_for('static', filename='footer.js') }}"></script>
